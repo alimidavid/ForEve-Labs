@@ -9,13 +9,14 @@
   <meta property="og:description" content="A research stage platform focused on reversing key features of oocyte aging, starting with IVF." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="assets/hero-oocyte-rejuvenation.jpg" />
+  <link rel="icon" type="image/png" href="assets/foreve-logo.png" />
   <style>
     :root {
       --bg: #fbf8f4;
       --ink: #142033;
       --muted: #5f6b7a;
       --soft: #f1e7df;
-      --soft-2: #eef7f4;
+      --soft-2: #eaf8f5;
       --card: #ffffff;
       --line: rgba(20, 32, 51, 0.11);
       --accent: #31c9bd;
@@ -65,7 +66,7 @@
       position: sticky;
       top: 0;
       z-index: 40;
-      background: rgba(251, 248, 244, 0.84);
+      background: rgba(251, 248, 244, 0.86);
       backdrop-filter: blur(18px);
       border-bottom: 1px solid rgba(20, 32, 51, 0.08);
     }
@@ -73,7 +74,7 @@
     nav {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 18px 24px;
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -84,31 +85,43 @@
       display: inline-flex;
       align-items: center;
       gap: 12px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      font-size: 1.08rem;
     }
 
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 16px;
-      background:
-        radial-gradient(circle at 70% 20%, rgba(255,255,255,0.86), transparent 14%),
-        linear-gradient(135deg, var(--accent), var(--plum));
-      color: white;
+    .brand-frame {
+      width: 150px;
+      min-height: 58px;
       display: grid;
       place-items: center;
-      box-shadow: 0 18px 34px rgba(49, 201, 189, 0.28);
-      font-weight: 900;
+      border-radius: 22px;
+      padding: 9px 14px;
+      background: linear-gradient(135deg, #101827, #273858);
+      box-shadow: 0 16px 34px rgba(20, 32, 51, 0.18);
+    }
+
+    .brand-logo {
+      width: 122px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 22px;
       color: var(--muted);
-      font-size: 0.94rem;
+      font-size: 0.93rem;
       font-weight: 620;
     }
 
@@ -128,7 +141,7 @@
     .hero {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 84px 24px 58px;
+      padding: 82px 24px 58px;
       display: grid;
       grid-template-columns: 1.02fr 0.98fr;
       gap: 56px;
@@ -164,7 +177,7 @@
 
     h1 {
       margin-top: 24px;
-      font-size: clamp(3.2rem, 7.2vw, 6.6rem);
+      font-size: clamp(3.25rem, 7.2vw, 6.6rem);
       max-width: 860px;
     }
 
@@ -283,7 +296,7 @@
 
     .fact strong {
       display: block;
-      font-size: 1.28rem;
+      font-size: 1.22rem;
       letter-spacing: -0.03em;
       margin-bottom: 4px;
     }
@@ -300,7 +313,7 @@
     }
 
     .section-head {
-      max-width: 770px;
+      max-width: 790px;
       margin-bottom: 34px;
     }
 
@@ -344,22 +357,6 @@
       margin: 12px 0 0;
     }
 
-    .card-image {
-      min-height: 320px;
-      border-radius: var(--radius-xl);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255,255,255,0.82);
-      background: var(--soft);
-    }
-
-    .card-image img {
-      width: 100%;
-      height: 100%;
-      min-height: 320px;
-      object-fit: cover;
-    }
-
     .problem-layout {
       display: grid;
       grid-template-columns: 0.82fr 1.18fr;
@@ -390,6 +387,43 @@
 
     .statement span {
       color: var(--accent-dark);
+    }
+
+    .memo-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .memo-card {
+      background: linear-gradient(150deg, rgba(49,201,189,0.14), rgba(217,154,141,0.17));
+    }
+
+    .thesis-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .thesis-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 13px;
+      align-items: start;
+      color: var(--muted);
+    }
+
+    .thesis-num {
+      width: 34px;
+      height: 34px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      background: #fff;
+      color: var(--accent-dark);
+      font-weight: 900;
+      margin-top: 1px;
     }
 
     .soft-band {
@@ -453,6 +487,42 @@
       margin: 7px 0 0;
     }
 
+    .image-split {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .image-tile {
+      position: relative;
+      border-radius: 30px;
+      overflow: hidden;
+      min-height: 280px;
+      background: var(--soft);
+      box-shadow: 0 18px 60px rgba(20,32,51,0.10);
+    }
+
+    .image-tile img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+    }
+
+    .caption {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      border-radius: 18px;
+      padding: 13px 15px;
+      color: #fff;
+      background: rgba(20,32,51,0.60);
+      backdrop-filter: blur(12px);
+      font-weight: 740;
+    }
+
     .impact-grid {
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
@@ -491,40 +561,85 @@
       margin-top: 1px;
     }
 
-    .image-split {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+    .science-visual {
       margin-top: 28px;
-    }
-
-    .image-tile {
-      position: relative;
-      border-radius: 30px;
+      border-radius: 34px;
       overflow: hidden;
-      min-height: 280px;
-      background: var(--soft);
-      box-shadow: 0 18px 60px rgba(20,32,51,0.10);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      background: #fff;
     }
 
-    .image-tile img {
+    .science-visual img {
+      width: 100%;
+      height: auto;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .person-card {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 18px 60px rgba(20, 32, 51, 0.08);
+    }
+
+    .person-photo {
+      height: 280px;
+      background: linear-gradient(135deg, var(--soft-2), var(--soft));
+      overflow: hidden;
+    }
+
+    .person-photo img {
       width: 100%;
       height: 100%;
-      min-height: 280px;
       object-fit: cover;
+      object-position: center top;
     }
 
-    .caption {
-      position: absolute;
-      left: 16px;
-      right: 16px;
-      bottom: 16px;
-      border-radius: 18px;
-      padding: 13px 15px;
-      color: #fff;
-      background: rgba(20,32,51,0.60);
-      backdrop-filter: blur(12px);
-      font-weight: 740;
+    .person-body {
+      padding: 24px;
+    }
+
+    .person-body h3 {
+      font-size: 1.28rem;
+    }
+
+    .role {
+      color: var(--accent-dark);
+      font-weight: 820;
+      margin-top: 6px;
+    }
+
+    .person-body p {
+      color: var(--muted);
+      margin: 12px 0 0;
+    }
+
+    .core-team {
+      margin-top: 22px;
+    }
+
+    .advisor-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      padding: 9px 12px;
+      font-weight: 680;
+      font-size: 0.9rem;
     }
 
     .roadmap {
@@ -591,24 +706,28 @@
       font-size: 0.94rem;
     }
 
+    @media (max-width: 1020px) {
+      .nav-links {
+        display: none;
+      }
+    }
+
     @media (max-width: 960px) {
       .hero,
       .quick-facts,
       .grid-2,
       .grid-3,
       .problem-layout,
+      .memo-grid,
       .band-inner,
       .impact-grid,
+      .team-grid,
       .contact {
         grid-template-columns: 1fr;
       }
 
       .quick-facts {
         padding-top: 8px;
-      }
-
-      .nav-links {
-        display: none;
       }
 
       .hero {
@@ -618,6 +737,10 @@
       .hero-visual,
       .hero-visual img {
         min-height: 460px;
+      }
+
+      .person-photo {
+        height: 360px;
       }
     }
 
@@ -632,8 +755,17 @@
         padding-right: 18px;
       }
 
+      .brand-frame {
+        width: 132px;
+        min-height: 52px;
+      }
+
+      .brand-logo {
+        width: 106px;
+      }
+
       h1 {
-        font-size: 3.2rem;
+        font-size: 3.18rem;
       }
 
       .hero-visual,
@@ -665,14 +797,17 @@
     <header class="nav-shell">
       <nav aria-label="Main navigation">
         <a class="brand" href="#top" aria-label="ForEve Labs home">
-          <span class="brand-mark">F</span>
-          <span>ForEve Labs</span>
+          <span class="brand-frame">
+            <img class="brand-logo" src="assets/foreve-logo.png" alt="ForEve logo" />
+          </span>
+          <span class="sr-only">ForEve Labs</span>
         </a>
         <div class="nav-links">
           <a href="#problem">IVF challenge</a>
+          <a href="#memo">Memo</a>
           <a href="#science">Science</a>
           <a href="#platform">Platform</a>
-          <a href="#roadmap">Roadmap</a>
+          <a href="#team">Team</a>
           <a class="nav-cta" href="mailto:david@foreve.life">Contact</a>
         </div>
       </nav>
@@ -681,10 +816,10 @@
     <main id="top">
       <section class="hero">
         <div>
-          <div class="eyebrow"><span class="eyebrow-dot"></span>Preclinical in vitro egg rejuvenation</div>
-          <h1>We rejuvenate eggs in vitro.</h1>
+          <div class="eyebrow"><span class="eyebrow-dot"></span>Where cell rejuvenation meets therapeutic power</div>
+          <h1>We rejuvenate women’s eggs.</h1>
           <p class="lead">
-            ForEve Labs is developing a novel compound therapy designed to reverse key features of egg aging outside the body, increase viable oocyte yield per IVF cycle and expand women’s fertility lifespan.
+            ForEve Labs is developing EpicOva, a preclinical in vitro oocyte rejuvenation approach designed to restore egg quality, increase mature egg yield and expand women’s fertility lifespan.
           </p>
           <div class="actions">
             <a class="button button-primary" href="mailto:david@foreve.life">Start a conversation</a>
@@ -696,19 +831,19 @@
           <img src="assets/hero-oocyte-rejuvenation.jpg" alt="Microscopic style rendering of an oocyte treatment process" />
           <div class="visual-card">
             <h3>Eggs are gold.</h3>
-            <p>ForEve starts from a simple premise: better egg quality can change the economics, burden and human experience of IVF.</p>
+            <p>ForEve starts from a simple premise: improving egg quality can change the economics, burden and human experience of IVF.</p>
           </div>
         </aside>
       </section>
 
       <div class="quick-facts" aria-label="ForEve quick facts">
         <div class="fact">
-          <strong>Lead program</strong>
-          <span>Oocyte rejuvenation</span>
+          <strong>Lead product</strong>
+          <span>EpicOva</span>
         </div>
         <div class="fact">
-          <strong>Modality</strong>
-          <span>Preclinical compound therapy</span>
+          <strong>Core tech</strong>
+          <span>Heterochromatin restoration</span>
         </div>
         <div class="fact">
           <strong>Workflow</strong>
@@ -716,7 +851,7 @@
         </div>
         <div class="fact">
           <strong>Ambition</strong>
-          <span>Higher viable egg yield per cycle</span>
+          <span>More mature eggs per cycle</span>
         </div>
       </div>
 
@@ -733,9 +868,34 @@
               IVF can retrieve, fertilize and transfer. It cannot, by itself, confer <span>competence</span> on an embryo.
             </p>
             <p class="lead">
-              The meaningful outcome is not a single laboratory step. It is cumulative live birth per intention to treat, read together with risks, cost, time invested and patient experience. ForEve addresses the upstream biological constraint: the age related decline in oocyte quality.
+              The meaningful outcome is live birth per intention to treat, read together with risks, cost, time invested and patient experience. ForEve addresses the upstream biological constraint: age related decline in oocyte quality.
             </p>
           </div>
+        </div>
+      </section>
+
+      <section id="memo">
+        <div class="section-head">
+          <div class="kicker">Strategic memo</div>
+          <h2>Boost success without breaking the IVF chain.</h2>
+          <p>
+            EpicOva is built as an add on to the fertility clinic workflow. The aim is not to replace IVF, but to improve the biological quality of the starting material before fertilization.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card memo-card">
+            <h3>Better</h3>
+            <p><strong>More mature eggs.</strong> The product thesis is to recover immature or unstable oocytes by improving cellular quality before IVF or ICSI.</p>
+          </article>
+          <article class="card memo-card">
+            <h3>Faster</h3>
+            <p><strong>Shorter IVF journey.</strong> More usable oocytes per retrieval may reduce the need for repeated stimulation and retrieval cycles.</p>
+          </article>
+          <article class="card memo-card">
+            <h3>Cheaper</h3>
+            <p><strong>Lower cost per baby.</strong> The business logic targets time to baby, dollars per baby and life disruption.</p>
+          </article>
         </div>
       </section>
 
@@ -744,23 +904,27 @@
           <div class="kicker">Science</div>
           <h2>Targeting the root cause of egg aging.</h2>
           <p>
-            Aging changes the functional state of cells. ForEve focuses on the oocyte, where quality can determine the chance of creating competent embryos and achieving a live birth after IVF.
+            ForEve’s research links oocyte aging to heterochromatin loss, retrotransposon activation and DNA damage. The therapeutic logic is to restore chromatin regulation, repress retrotransposons and improve oocyte function.
           </p>
         </div>
 
         <div class="grid-3">
           <article class="card">
-            <h3>Cell aging mechanism</h3>
-            <p>Our research program focuses on mechanisms that drive cellular aging and functional decline in women’s egg cells.</p>
+            <h3>Mechanism</h3>
+            <p>With age, oocytes lose heterochromatin structure. This weakens silencing and transcriptional control, which can impair cellular function.</p>
           </article>
           <article class="card">
-            <h3>In vitro rejuvenation</h3>
-            <p>The therapy is designed to act outside the body, before the downstream IVF steps already used by fertility clinics.</p>
+            <h3>Damage</h3>
+            <p>Retrotransposon activity increases in old oocytes and can contribute to DNA damage and loss of cellular functionality.</p>
           </article>
           <article class="card">
-            <h3>Viable egg yield</h3>
-            <p>The development goal is to increase the number of usable oocytes available per cycle and reduce repeated treatment burden.</p>
+            <h3>Recovery</h3>
+            <p>ForEve’s preclinical work aims to enhance heterochromatin and reduce retrotransposon expression in aged oocytes.</p>
           </article>
+        </div>
+
+        <div class="science-visual">
+          <img src="assets/science-enhancing-heterochromatin.jpg" alt="ForEve scientific data on enhancing heterochromatin and oocyte recovery" />
         </div>
 
         <div class="image-split">
@@ -779,9 +943,9 @@
         <div class="band-inner">
           <div>
             <div class="kicker">Platform</div>
-            <h2>From fertility entry point to epigenetic cell rejuvenation platform.</h2>
+            <h2>From EpicOva to an epigenetic cell rejuvenation platform.</h2>
             <p class="lead">
-              The first program targets oocytes because the unmet need is clear, measurable and deeply human. The broader platform vision is to apply the same rejuvenation logic to additional cell types once the scientific foundation is validated.
+              The first program targets oocytes because the unmet need is clear, measurable and deeply human. The broader platform vision extends to T cell augmentation, tissue transplantation and ocular dystrophy after validation of the core rejuvenation logic.
             </p>
           </div>
 
@@ -789,29 +953,29 @@
             <article class="step">
               <div class="step-num">01</div>
               <div>
-                <h3>Map aging signatures</h3>
-                <p>Identify biological markers linked to loss of cellular function in the target cell type.</p>
+                <h3>Restore heterochromatin</h3>
+                <p>Target epigenetic modifiers to rebuild chromatin organization in aged cells.</p>
               </div>
             </article>
             <article class="step">
               <div class="step-num">02</div>
               <div>
-                <h3>Apply rejuvenation protocol</h3>
-                <p>Use controlled in vitro exposure to a preclinical compound therapy designed to restore healthier cellular function.</p>
+                <h3>Repress retrotransposons</h3>
+                <p>Reduce harmful retrotransposon activity associated with loss of oocyte function.</p>
               </div>
             </article>
             <article class="step">
               <div class="step-num">03</div>
               <div>
-                <h3>Measure functional recovery</h3>
-                <p>Evaluate whether the treated cells show improved viability, quality and downstream translational potential.</p>
+                <h3>Improve cell quality</h3>
+                <p>Measure whether treated oocytes show improved maturation and downstream fertilization potential.</p>
               </div>
             </article>
             <article class="step">
               <div class="step-num">04</div>
               <div>
-                <h3>Translate into IVF</h3>
-                <p>Develop a product path compatible with existing fertility clinic infrastructure and clinical decision making.</p>
+                <h3>Fit existing IVF</h3>
+                <p>Supplement the in vitro maturation culture medium with EpicOva, without disrupting the core clinical chain.</p>
               </div>
             </article>
           </div>
@@ -850,6 +1014,72 @@
         </div>
       </section>
 
+      <section id="team">
+        <div class="section-head">
+          <div class="kicker">Team</div>
+          <h2>Built by founders with science, medicine and execution depth.</h2>
+          <p>
+            ForEve combines epigenetics, reproductive biology, clinical translation and company building, with a core team anchored around HUJI research capabilities and fertility expertise.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <article class="person-card">
+            <div class="person-photo">
+              <img src="assets/team-michael-klutstein.png" alt="Prof. Michael Klutstein" />
+            </div>
+            <div class="person-body">
+              <h3>Prof. Michael Klutstein</h3>
+              <div class="role">CSO and Cofounder</div>
+              <p>Head of the Chromatin and Aging Research Lab at HUJI, with over 20 years of experience in epigenetics and reproduction research.</p>
+            </div>
+          </article>
+
+          <article class="person-card">
+            <div class="person-photo">
+              <img src="assets/team-david-alimi.png" alt="David Alimi" />
+            </div>
+            <div class="person-body">
+              <h3>David Alimi</h3>
+              <div class="role">CEO and Cofounder</div>
+              <p>MSc, MBA, second time founder and three time CEO, with proven execution experience in regulated and complex environments.</p>
+            </div>
+          </article>
+
+          <article class="person-card">
+            <div class="person-photo">
+              <img src="assets/team-peera-wasserzug-pash.jpg" alt="Dr. Peera Wasserzug Pash" />
+            </div>
+            <div class="person-body">
+              <h3>Dr. Peera Wasserzug Pash</h3>
+              <div class="role">Cofounder</div>
+              <p>PhD in reproductive biology, expert in oocyte aging and epigenetics.</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid-2 core-team">
+          <article class="card">
+            <h3>Core team</h3>
+            <div class="advisor-row">
+              <span class="pill">Dr. Lior Onn Soreq, Principal Investigator</span>
+              <span class="pill">Dr. David Kulack, CMO, TBC</span>
+              <span class="pill">Dr. Sandrine Ben Amram, QC Supervision</span>
+              <span class="pill">Dr. Peera Wasserzug, Consultant</span>
+            </div>
+          </article>
+          <article class="card">
+            <h3>Advisory network, TBC</h3>
+            <div class="advisor-row">
+              <span class="pill">Prof. Howard Cedar</span>
+              <span class="pill">Prof. Sara Eyal</span>
+              <span class="pill">Prof. Francesca E. Duncan</span>
+              <span class="pill">Dr. Tal Inbar</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
       <section id="roadmap">
         <div class="section-head">
           <div class="kicker">Development plan</div>
@@ -864,14 +1094,14 @@
             <div class="roadmap-time">Near term</div>
             <div>
               <h3>Strengthen proof of concept</h3>
-              <p>Refine the treatment protocol, confirm biological markers and measure the impact on oocyte quality.</p>
+              <p>Refine the EpicOva treatment protocol, confirm biological markers and measure the impact on oocyte quality.</p>
             </div>
           </article>
           <article class="roadmap-item">
             <div class="roadmap-time">Next stage</div>
             <div>
-              <h3>Build translational package</h3>
-              <p>Prepare the scientific, regulatory and operational basis for the first fertility focused development program.</p>
+              <h3>Reach GLP readiness</h3>
+              <p>Prepare the scientific, regulatory and operational basis for a fertility focused development program.</p>
             </div>
           </article>
           <article class="roadmap-item">
