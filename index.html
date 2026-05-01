@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ForEve Labs | Egg rejuvenation in vitro</title>
+  <meta name="description" content="ForEve Labs is developing a preclinical in vitro egg rejuvenation approach designed to expand women's fertility lifespan and improve viable egg yield in IVF." />
+  <meta property="og:title" content="ForEve Labs | Egg rejuvenation in vitro" />
+  <meta property="og:description" content="A research stage platform focused on reversing key features of oocyte aging, starting with IVF." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/hero-oocyte-rejuvenation.jpg" />
+  <style>
+    :root {
+      --bg: #fbf8f4;
+      --ink: #142033;
+      --muted: #5f6b7a;
+      --soft: #f1e7df;
+      --soft-2: #eef7f4;
+      --card: #ffffff;
+      --line: rgba(20, 32, 51, 0.11);
+      --accent: #31c9bd;
+      --accent-dark: #0c7e78;
+      --rose: #d99a8d;
+      --plum: #4f3f8f;
+      --shadow: 0 28px 90px rgba(20, 32, 51, 0.12);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --max: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(49, 201, 189, 0.18), transparent 34%),
+        radial-gradient(circle at 86% 12%, rgba(217, 154, 141, 0.20), transparent 30%),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .site {
+      overflow: hidden;
+    }
+
+    .nav-shell {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(251, 248, 244, 0.84);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(20, 32, 51, 0.08);
+    }
+
+    nav {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      font-size: 1.08rem;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 70% 20%, rgba(255,255,255,0.86), transparent 14%),
+        linear-gradient(135deg, var(--accent), var(--plum));
+      color: white;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 18px 34px rgba(49, 201, 189, 0.28);
+      font-weight: 900;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 620;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-dark);
+    }
+
+    .nav-cta {
+      padding: 10px 17px;
+      border-radius: 999px;
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(20, 32, 51, 0.06);
+    }
+
+    .hero {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 84px 24px 58px;
+      display: grid;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(20, 32, 51, 0.10);
+      color: var(--accent-dark);
+      font-weight: 760;
+      font-size: 0.88rem;
+    }
+
+    .eyebrow-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(49, 201, 189, 0.16);
+    }
+
+    h1, h2, h3 {
+      margin: 0;
+      letter-spacing: -0.045em;
+      line-height: 1.06;
+    }
+
+    h1 {
+      margin-top: 24px;
+      font-size: clamp(3.2rem, 7.2vw, 6.6rem);
+      max-width: 860px;
+    }
+
+    h2 {
+      font-size: clamp(2.15rem, 4.8vw, 4.05rem);
+    }
+
+    h3 {
+      font-size: 1.38rem;
+    }
+
+    .lead {
+      margin: 26px 0 0;
+      color: var(--muted);
+      font-size: 1.18rem;
+      max-width: 720px;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 50px;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-weight: 780;
+      border: 1px solid transparent;
+      transition: transform 180ms ease, box-shadow 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: #fff;
+      background: var(--ink);
+      box-shadow: 0 18px 44px rgba(20, 32, 51, 0.22);
+    }
+
+    .button-secondary {
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.78);
+      border-color: var(--line);
+    }
+
+    .hero-visual {
+      position: relative;
+      border-radius: 46px;
+      min-height: 580px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.84);
+      background: #0d1c35;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      min-height: 580px;
+      object-fit: cover;
+      filter: saturate(1.05) contrast(1.03);
+    }
+
+    .hero-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(180deg, transparent 35%, rgba(10, 18, 34, 0.64)),
+        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.26), transparent 24%);
+    }
+
+    .visual-card {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      z-index: 2;
+      color: #fff;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      backdrop-filter: blur(16px);
+      border-radius: 28px;
+      padding: 22px;
+    }
+
+    .visual-card p {
+      margin: 7px 0 0;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .quick-facts {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px 34px;
+    }
+
+    .fact {
+      background: rgba(255,255,255,0.76);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 20px;
+      box-shadow: 0 16px 50px rgba(20, 32, 51, 0.06);
+    }
+
+    .fact strong {
+      display: block;
+      font-size: 1.28rem;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+
+    .fact span {
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    section {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 78px 24px;
+    }
+
+    .section-head {
+      max-width: 770px;
+      margin-bottom: 34px;
+    }
+
+    .kicker {
+      color: var(--accent-dark);
+      font-weight: 820;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.78rem;
+      margin-bottom: 12px;
+    }
+
+    .section-head p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      margin: 18px 0 0;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: 0 18px 60px rgba(20, 32, 51, 0.07);
+    }
+
+    .card p {
+      color: var(--muted);
+      margin: 12px 0 0;
+    }
+
+    .card-image {
+      min-height: 320px;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.82);
+      background: var(--soft);
+    }
+
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 320px;
+      object-fit: cover;
+    }
+
+    .problem-layout {
+      display: grid;
+      grid-template-columns: 0.82fr 1.18fr;
+      gap: 26px;
+      align-items: center;
+    }
+
+    .chart-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .source {
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin: 12px 0 0;
+    }
+
+    .statement {
+      font-size: clamp(1.7rem, 3.2vw, 2.55rem);
+      letter-spacing: -0.04em;
+      line-height: 1.12;
+      margin: 0;
+    }
+
+    .statement span {
+      color: var(--accent-dark);
+    }
+
+    .soft-band {
+      max-width: none;
+      background: linear-gradient(135deg, #10243a, #211b3f);
+      color: #fff;
+      margin: 42px 0 0;
+      padding: 90px 0;
+    }
+
+    .band-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .soft-band .kicker {
+      color: #7ff1e5;
+    }
+
+    .soft-band p {
+      color: rgba(255,255,255,0.73);
+    }
+
+    .steps {
+      display: grid;
+      gap: 14px;
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 16px;
+      border-radius: 26px;
+      padding: 20px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    .step-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      color: #7ff1e5;
+      font-weight: 900;
+      background: rgba(255,255,255,0.10);
+    }
+
+    .step h3 {
+      font-size: 1.18rem;
+      letter-spacing: -0.03em;
+    }
+
+    .step p {
+      margin: 7px 0 0;
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .highlight {
+      background: linear-gradient(150deg, rgba(49,201,189,0.16), rgba(217,154,141,0.18));
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .mini-item {
+      display: grid;
+      grid-template-columns: 28px 1fr;
+      gap: 12px;
+      align-items: start;
+      color: var(--muted);
+    }
+
+    .mini-dot {
+      width: 28px;
+      height: 28px;
+      border-radius: 10px;
+      background: var(--soft-2);
+      color: var(--accent-dark);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.82rem;
+      margin-top: 1px;
+    }
+
+    .image-split {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .image-tile {
+      position: relative;
+      border-radius: 30px;
+      overflow: hidden;
+      min-height: 280px;
+      background: var(--soft);
+      box-shadow: 0 18px 60px rgba(20,32,51,0.10);
+    }
+
+    .image-tile img {
+      width: 100%;
+      height: 100%;
+      min-height: 280px;
+      object-fit: cover;
+    }
+
+    .caption {
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      border-radius: 18px;
+      padding: 13px 15px;
+      color: #fff;
+      background: rgba(20,32,51,0.60);
+      backdrop-filter: blur(12px);
+      font-weight: 740;
+    }
+
+    .roadmap {
+      display: grid;
+      gap: 14px;
+    }
+
+    .roadmap-item {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 24px;
+      align-items: start;
+      padding: 24px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 48px rgba(20,32,51,0.06);
+    }
+
+    .roadmap-time {
+      color: var(--accent-dark);
+      font-weight: 840;
+    }
+
+    .roadmap-item p {
+      color: var(--muted);
+      margin: 8px 0 0;
+    }
+
+    .contact {
+      max-width: var(--max);
+      margin: 42px auto 0;
+      padding: 56px;
+      border-radius: 44px;
+      background: linear-gradient(135deg, var(--accent-dark), var(--ink));
+      color: #fff;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+      box-shadow: var(--shadow);
+    }
+
+    .contact p {
+      color: rgba(255,255,255,0.76);
+      max-width: 680px;
+      margin: 16px 0 0;
+    }
+
+    .contact .button {
+      background: #fff;
+      color: var(--ink);
+    }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 46px 24px 58px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 0.94rem;
+    }
+
+    @media (max-width: 960px) {
+      .hero,
+      .quick-facts,
+      .grid-2,
+      .grid-3,
+      .problem-layout,
+      .band-inner,
+      .impact-grid,
+      .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-facts {
+        padding-top: 8px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .hero-visual,
+      .hero-visual img {
+        min-height: 460px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      nav,
+      .hero,
+      .quick-facts,
+      section,
+      .band-inner,
+      footer {
+        padding-left: 18px;
+        padding-right: 18px;
+      }
+
+      h1 {
+        font-size: 3.2rem;
+      }
+
+      .hero-visual,
+      .hero-visual img {
+        min-height: 390px;
+      }
+
+      .image-split {
+        grid-template-columns: 1fr;
+      }
+
+      .roadmap-item {
+        grid-template-columns: 1fr;
+      }
+
+      .contact {
+        padding: 34px;
+        border-radius: 32px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="site">
+    <header class="nav-shell">
+      <nav aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="ForEve Labs home">
+          <span class="brand-mark">F</span>
+          <span>ForEve Labs</span>
+        </a>
+        <div class="nav-links">
+          <a href="#problem">IVF challenge</a>
+          <a href="#science">Science</a>
+          <a href="#platform">Platform</a>
+          <a href="#roadmap">Roadmap</a>
+          <a class="nav-cta" href="mailto:contact@foreve.life">Contact</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span>Preclinical in vitro egg rejuvenation</div>
+          <h1>We rejuvenate eggs in vitro.</h1>
+          <p class="lead">
+            ForEve Labs is developing a novel compound therapy designed to reverse key features of egg aging outside the body, increase viable oocyte yield per IVF cycle and expand women’s fertility lifespan.
+          </p>
+          <div class="actions">
+            <a class="button button-primary" href="mailto:contact@foreve.life">Start a conversation</a>
+            <a class="button button-secondary" href="#science">Explore the science</a>
+          </div>
+        </div>
+
+        <aside class="hero-visual" aria-label="Oocyte rejuvenation visual">
+          <img src="assets/hero-oocyte-rejuvenation.jpg" alt="Microscopic style rendering of an oocyte treatment process" />
+          <div class="visual-card">
+            <h3>Eggs are gold.</h3>
+            <p>ForEve starts from a simple premise: better egg quality can change the economics, burden and human experience of IVF.</p>
+          </div>
+        </aside>
+      </section>
+
+      <div class="quick-facts" aria-label="ForEve quick facts">
+        <div class="fact">
+          <strong>Lead program</strong>
+          <span>Oocyte rejuvenation</span>
+        </div>
+        <div class="fact">
+          <strong>Modality</strong>
+          <span>Preclinical compound therapy</span>
+        </div>
+        <div class="fact">
+          <strong>Workflow</strong>
+          <span>Designed for existing IVF protocols</span>
+        </div>
+        <div class="fact">
+          <strong>Ambition</strong>
+          <span>Higher viable egg yield per cycle</span>
+        </div>
+      </div>
+
+      <section id="problem">
+        <div class="problem-layout">
+          <div class="chart-card">
+            <img src="assets/live-birth-per-intended-egg-retrieval.jpg" alt="Chart showing live birth per intended egg retrieval by age group" />
+            <p class="source">Source shown in the provided material: SART Preliminary National Summary Report for 2022.</p>
+          </div>
+
+          <div>
+            <div class="kicker">The IVF challenge</div>
+            <p class="statement">
+              IVF can retrieve, fertilize and transfer. It cannot, by itself, confer <span>competence</span> on an embryo.
+            </p>
+            <p class="lead">
+              The meaningful outcome is not a single laboratory step. It is cumulative live birth per intention to treat, read together with risks, cost, time invested and patient experience. ForEve addresses the upstream biological constraint: the age related decline in oocyte quality.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="science">
+        <div class="section-head">
+          <div class="kicker">Science</div>
+          <h2>Targeting the root cause of egg aging.</h2>
+          <p>
+            Aging changes the functional state of cells. ForEve focuses on the oocyte, where quality can determine the chance of creating competent embryos and achieving a live birth after IVF.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Cell aging mechanism</h3>
+            <p>Our research program focuses on mechanisms that drive cellular aging and functional decline in women’s egg cells.</p>
+          </article>
+          <article class="card">
+            <h3>In vitro rejuvenation</h3>
+            <p>The therapy is designed to act outside the body, before the downstream IVF steps already used by fertility clinics.</p>
+          </article>
+          <article class="card">
+            <h3>Viable egg yield</h3>
+            <p>The development goal is to increase the number of usable oocytes available per cycle and reduce repeated treatment burden.</p>
+          </article>
+        </div>
+
+        <div class="image-split">
+          <div class="image-tile">
+            <img src="assets/ivf-microscopy.jpg" alt="Microscopy image of IVF cell handling" />
+            <div class="caption">Designed to fit into IVF workflows</div>
+          </div>
+          <div class="image-tile">
+            <img src="assets/embryo-microscopy.jpg" alt="Microscopy image of early embryo development" />
+            <div class="caption">Focused on cellular competence</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="platform" class="soft-band">
+        <div class="band-inner">
+          <div>
+            <div class="kicker">Platform</div>
+            <h2>From fertility entry point to epigenetic cell rejuvenation platform.</h2>
+            <p class="lead">
+              The first program targets oocytes because the unmet need is clear, measurable and deeply human. The broader platform vision is to apply the same rejuvenation logic to additional cell types once the scientific foundation is validated.
+            </p>
+          </div>
+
+          <div class="steps">
+            <article class="step">
+              <div class="step-num">01</div>
+              <div>
+                <h3>Map aging signatures</h3>
+                <p>Identify biological markers linked to loss of cellular function in the target cell type.</p>
+              </div>
+            </article>
+            <article class="step">
+              <div class="step-num">02</div>
+              <div>
+                <h3>Apply rejuvenation protocol</h3>
+                <p>Use controlled in vitro exposure to a preclinical compound therapy designed to restore healthier cellular function.</p>
+              </div>
+            </article>
+            <article class="step">
+              <div class="step-num">03</div>
+              <div>
+                <h3>Measure functional recovery</h3>
+                <p>Evaluate whether the treated cells show improved viability, quality and downstream translational potential.</p>
+              </div>
+            </article>
+            <article class="step">
+              <div class="step-num">04</div>
+              <div>
+                <h3>Translate into IVF</h3>
+                <p>Develop a product path compatible with existing fertility clinic infrastructure and clinical decision making.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="impact">
+        <div class="section-head">
+          <div class="kicker">Potential impact</div>
+          <h2>More viable eggs can change the IVF journey.</h2>
+          <p>
+            ForEve’s first program aims to improve what matters before repeated cycles begin: the quality and availability of oocytes.
+          </p>
+        </div>
+
+        <div class="impact-grid">
+          <article class="card highlight">
+            <h3>For patients</h3>
+            <p>A higher number of viable eggs per retrieval may reduce the number of cycles needed, the exposure to repeated drug treatments, the waiting time and the financial pressure of care.</p>
+            <div class="mini-list">
+              <div class="mini-item"><span class="mini-dot">✓</span><span>Potentially fewer retrieval cycles.</span></div>
+              <div class="mini-item"><span class="mini-dot">✓</span><span>Potentially lower treatment burden.</span></div>
+              <div class="mini-item"><span class="mini-dot">✓</span><span>A clearer path toward live birth oriented outcomes.</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>For clinics</h3>
+            <p>The intended product logic is to integrate into existing IVF workflows, rather than force clinics to rebuild their infrastructure.</p>
+            <div class="mini-list">
+              <div class="mini-item"><span class="mini-dot">✓</span><span>Designed around familiar in vitro handling.</span></div>
+              <div class="mini-item"><span class="mini-dot">✓</span><span>Aligned with measurable quality outcomes.</span></div>
+              <div class="mini-item"><span class="mini-dot">✓</span><span>Built for a translational development path.</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="roadmap">
+        <div class="section-head">
+          <div class="kicker">Development plan</div>
+          <h2>A staged path to de risk the platform.</h2>
+          <p>
+            ForEve is built around a focused first use case, clear biological validation and disciplined translational planning.
+          </p>
+        </div>
+
+        <div class="roadmap">
+          <article class="roadmap-item">
+            <div class="roadmap-time">Near term</div>
+            <div>
+              <h3>Strengthen proof of concept</h3>
+              <p>Refine the treatment protocol, confirm biological markers and measure the impact on oocyte quality.</p>
+            </div>
+          </article>
+          <article class="roadmap-item">
+            <div class="roadmap-time">Next stage</div>
+            <div>
+              <h3>Build translational package</h3>
+              <p>Prepare the scientific, regulatory and operational basis for the first fertility focused development program.</p>
+            </div>
+          </article>
+          <article class="roadmap-item">
+            <div class="roadmap-time">Platform path</div>
+            <div>
+              <h3>Expand to other cell types</h3>
+              <p>Use the oocyte program to validate the broader logic of epigenetic cell rejuvenation across high value applications.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="grid-2">
+          <article class="card">
+            <h3>Scientific partners</h3>
+            <p>ForEve is open to conversations with researchers, clinicians and translational teams working at the intersection of fertility, cell biology and aging.</p>
+          </article>
+          <article class="card">
+            <h3>Investors</h3>
+            <p>ForEve combines a clear clinical entry point, a large human need and a platform ambition in epigenetic cell rejuvenation.</p>
+          </article>
+        </div>
+
+        <div class="contact">
+          <div>
+            <h2>Let’s expand women’s fertility lifespan.</h2>
+            <p>For partnerships, scientific discussions or investor conversations, contact the ForEve Labs team.</p>
+          </div>
+          <a class="button" href="mailto:contact@foreve.life">contact@foreve.life</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> ForEve Labs. All rights reserved.</div>
+      <div>Research stage technology. Not approved for clinical use.</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
